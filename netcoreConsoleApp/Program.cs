@@ -9,7 +9,7 @@ namespace DotnetCoreConsoleApp
 {
     class Program
     {
-        public static AppRunner<App> AppRunner;
+        public static AppRunner<App>? AppRunner;
 
         static void Main(string[] args)
         {
@@ -58,7 +58,7 @@ Author: https://xujinkai.net
                 for (var i = 0; i < args.Length; i++)
                 {
                     var p = Marshal.ReadIntPtr(argv, i * IntPtr.Size);
-                    args[i] = Marshal.PtrToStringUni(p);
+                    args[i] = Marshal.PtrToStringUni(p) ?? "";
                 }
 
                 return args;

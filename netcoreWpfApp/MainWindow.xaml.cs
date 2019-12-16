@@ -31,7 +31,7 @@ namespace DotnetCoreWpfApp
             App.Current.Shutdown();
         }
 
-        private void OpenDebugWindow(object sender, RoutedEventArgs e)
+        private void OpenDebugWindow(object? sender, RoutedEventArgs? e)
         {
             new DebugComponents.DebugWindow().Show();
         }

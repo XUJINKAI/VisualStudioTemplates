@@ -17,9 +17,9 @@ namespace DotnetCoreWpfApp
 #endif
 
 
-        public static string EntryLocation => System.Reflection.Assembly.GetEntryAssembly().Location;
+        public static string? EntryLocation => System.Reflection.Assembly.GetEntryAssembly()?.Location;
 
-        public static string BaseDirectory => AppDomain.CurrentDomain.BaseDirectory;
+        public static string? BaseDirectory => AppDomain.CurrentDomain.BaseDirectory;
 
         public static bool IsDesignTime => _isDesignTime;
 

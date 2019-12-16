@@ -21,9 +21,9 @@ namespace DotnetCoreWpfApp
             (this.MainWindow = new MainWindow()).Show();
         }
 
-        public static void ProcessException(string From, Exception e, bool ShowMessageBox)
+        public static void ProcessException(string From, Exception? e, bool ShowMessageBox)
         {
-            var msg = $"Source: {From}{Environment.NewLine}Message: {e.Message}{Environment.NewLine}StackTrace:{Environment.NewLine}{e.StackTrace}";
+            var msg = $"Source: {From}{Environment.NewLine}Message: {e?.Message}{Environment.NewLine}StackTrace:{Environment.NewLine}{e?.StackTrace}";
             if (ShowMessageBox) MessageBox.Show(msg, "App Exception");
             System.Diagnostics.Trace.TraceError(msg);
         }
@@ -47,7 +47,7 @@ namespace DotnetCoreWpfApp
             e.Handled = false;
         }
 
-        private void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
+        private void TaskScheduler_UnobservedTaskException(object? sender, UnobservedTaskExceptionEventArgs e)
         {
             ProcessException("TaskScheduler.UnobservedTaskException", e.Exception, false);
         }
