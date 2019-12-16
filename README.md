@@ -1,4 +1,4 @@
-# CSharpTemplates
+# VisualStudioTemplates
 
 For quickly start projects.
 

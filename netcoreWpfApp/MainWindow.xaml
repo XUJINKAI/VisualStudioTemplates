@@ -37,8 +37,8 @@
                 </StackPanel.Resources>
 
                 <TextBox xml:space="preserve" IsReadOnly="True" BorderThickness="0">WPF Template App.
-GitHub: https://github.com/XUJINKAI/CSharpTemplates
-Author: http://xujinkai.net
+GitHub: https://github.com/XUJINKAI/VisualStudioTemplates
+Author: https://xujinkai.net
 </TextBox>
                 
             </StackPanel>
