@@ -1,0 +1,42 @@
+﻿<root:BaseWindow x:Class="DotnetCoreWpfApp.DebugComponents.DebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DotnetCoreWpfApp.DebugComponents"
+        xmlns:root="clr-namespace:DotnetCoreWpfApp"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=local:DebugWindow, IsDesignTimeCreatable=True}"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        WindowStyle="ToolWindow"
+        Title="DebugWindow" Height="600" Width="600">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="StackPanel">
+                <Setter Property="Orientation" Value="Horizontal"></Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Menu>
+            <MenuItem Header="_Quit" Click="AppShutDown"></MenuItem>
+            <MenuItem Header="_Break" Click="DebuggerBreak"></MenuItem>
+            <MenuItem Header="Throw" Click="ThrowException"></MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1">
+            <TabControl>
+                <TabItem Header="DebugPage">
+                    <Frame>
+                        <Frame.Content>
+                            <local:DebugPage></local:DebugPage>
+                        </Frame.Content>
+                    </Frame>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</root:BaseWindow>

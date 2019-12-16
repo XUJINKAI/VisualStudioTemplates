@@ -14,6 +14,10 @@ namespace DotnetCoreConsoleApp
         static void Main(string[] args)
         {
             Console.WriteAscii("ConsoleApp", Color.Red);
+            Console.WriteLine(@"dotnet core Template App.
+GitHub: https://github.com/XUJINKAI/CSharpTemplates
+Author: http://xujinkai.net
+", Color.Gray);
 
             var setting = new AppSettings()
             {
