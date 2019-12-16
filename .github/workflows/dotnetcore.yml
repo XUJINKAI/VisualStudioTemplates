@@ -1,0 +1,24 @@
+name: .NET Core
+
+on: push
+
+jobs:
+  build_netcoreConsoleApp:
+    runs-on: [ubuntu-16.04, windows-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.0
+    - run: cd netcoreConsoleApp
+    - run: dotnet build --configuration Release
+
+  build_netcoreWpfApp:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.0
+    - run: cd netcoreWpfApp
+    - run: dotnet build --configuration Release
