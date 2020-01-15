@@ -1,17 +1,17 @@
-﻿using CommandDotNet;
-using CommandDotNet.Models;
-using System;
-using System.Runtime.InteropServices;
+﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
+using CommandDotNet;
+using CommandDotNet.Models;
 using Console = Colorful.Console;
 
 namespace DotnetCoreConsoleApp
 {
-    class Program
+    internal class Program
     {
         public static AppRunner<App>? AppRunner;
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteAscii("ConsoleApp", Color.Red);
             Console.WriteLine(@"dotnet core Template App.
@@ -41,9 +41,9 @@ Author: https://xujinkai.net
         }
 
         [DllImport("shell32.dll", SetLastError = true)]
-        static extern IntPtr CommandLineToArgvW([MarshalAs(UnmanagedType.LPWStr)] string lpCmdLine, out int pNumArgs);
+        private static extern IntPtr CommandLineToArgvW([MarshalAs(UnmanagedType.LPWStr)] string lpCmdLine, out int pNumArgs);
 
-        static string[] CommandLineToArgs(string commandLine)
+        private static string[] CommandLineToArgs(string commandLine)
         {
             if (string.IsNullOrEmpty(commandLine))
                 return Array.Empty<string>();
