@@ -16,13 +16,12 @@ namespace AutofacApp
              */
             var builder = new ContainerBuilder();
 
-            builder.Configure<Configuration>(configure =>
-                configure
+            builder.AddConfigration(config => config
                     .SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.json", true)
                     .AddEnvironmentVariables("APP_")
-                    .AddCommandLine(args)
-                    );
+                    .AddCommandLine(args));
+            builder.Configure<Configuration>();
             builder.AddJsonSerializer();
 
             var container = builder.Build();
