@@ -10,9 +10,9 @@
         public string Sub { get; set; }
     }
 
-    public class Configuration
+    public class AppSetting
     {
-        public Configuration()
+        public AppSetting()
         {
             SubConfig = new SubConfig();
         }

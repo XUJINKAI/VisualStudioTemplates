@@ -36,9 +36,8 @@ namespace Autofac.Extension
 
         public static void AddJsonSerializer(this ContainerBuilder builder)
         {
-            builder.RegisterType<JsonSerialization>()
-                .AsSelf()
-                .As<ISerialization>();
+            builder.RegisterType<JsonSerializer>()
+                .As<IJsonSerializer>();
         }
     }
 }

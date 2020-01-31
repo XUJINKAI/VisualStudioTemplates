@@ -1,6 +1,6 @@
 ﻿namespace Autofac.Extension
 {
-    public interface ISerialization
+    public interface IJsonSerializer
     {
         string Serialize<T>(T obj);
 

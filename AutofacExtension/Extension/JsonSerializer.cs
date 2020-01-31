@@ -2,11 +2,11 @@
 
 namespace Autofac.Extension
 {
-    public class JsonSerialization : ISerialization
+    public class JsonSerializer : IJsonSerializer
     {
         private readonly JsonSerializerSettings _setting;
 
-        public JsonSerialization()
+        public JsonSerializer()
         {
             _setting = new JsonSerializerSettings()
             {
